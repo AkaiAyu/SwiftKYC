@@ -265,26 +265,18 @@ def kyc_form():
 @app.route("/risk-check")
 def risk_check():
 
-    # If already calculated → show risk page again
-    if session.get("risk_level"):
-        return render_template(
-            "risk.html",
-            score=session["risk_score"],
-            level=session["risk_level"]
-        )
-
-    # 🔢 Calculate risk
+    # 🔥 ALWAYS generate new random score (demo mode)
     score = calculate_risk_score()
-    session["risk_score"] = score
 
+    # Determine level
     if score <= 30:
-        session["risk_level"] = "LOW"
+        level = "LOW"
 
     elif score <= 60:
-        session["risk_level"] = "MEDIUM"
+        level = "MEDIUM"
 
     else:
-        session["risk_level"] = "HIGH"
+        level = "HIGH"
 
         # Save HIGH risk user as pending for admin review
         phone = session.get("phone")
@@ -293,13 +285,16 @@ def risk_check():
             user.status = "pending"
             db.session.commit()
 
-    # ✅ ALWAYS show risk page first (for all levels)
-    session.pop("new_user", None)
+    # Store only for showing on page (not for logic)
+    session["risk_score"] = score
+    session["risk_level"] = level
+
     return render_template(
         "risk.html",
-        score=session["risk_score"],
-        level=session["risk_level"]
+        score=score,
+        level=level
     )
+
             
 @app.route("/extra-verification", methods=["GET","POST"])
 def extra_verification():
