@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+{% block title %}KYC Details • SwiftKYC{% endblock %}
+{% block content %}
+
+<h2>KYC Details Fetched ✔</h2>
+
+<ul class="list-group">
+    <li class="list-group-item">Name: {{ data.name }}</li>
+    <li class="list-group-item">DOB: {{ data.dob }}</li>
+    <li class="list-group-item">PAN: {{ data.pan }}</li>
+    <li class="list-group-item">Aadhaar: {{ data.aadhaar }}</li>
+</ul>
+
+<a href="/risk-check" class="btn btn-primary mt-3">
+    Continue Onboarding →
+</a>
+
+{% endblock %}
+
+</body>
+</html>

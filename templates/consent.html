@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Consent</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h2>DigiLocker Consent</h2>
+
+    <p>
+        We request access to your Aadhaar and PAN
+        for secure KYC verification.
+    </p>
+
+    <a href="/fetch-kyc" class="btn btn-success">
+        I Agree & Continue
+    </a>
+
+    {% endblock %}
+
+</body>
+
+</html>

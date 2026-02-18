@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Risk Assessment</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+{% block title %}Risk Check • SwiftKYC{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-4">Fraud Risk Assessment 🔍</h2>
+
+<div class="card p-4">
+    <h1>Risk Score: {{ score }}</h1>
+    <h2 class="mb-3">Risk Level: {{ level }}</h2>
+
+    {% if level == "LOW" %}
+        <p class="text-success fs-5">
+            Account Approved Automatically ✔
+        </p>
+
+        <a href="/activate-services" class="btn btn-success">
+            Activate Banking Services →
+        </a>
+
+    {% elif level == "MEDIUM" %}
+        <p class="text-warning fs-5">
+            Additional Verification Required ⚠️
+        </p>
+
+        <a href="/extra-verification" class="btn btn-warning">
+            Verify Now →
+        </a>
+
+    {% else %}
+        <p class="text-danger fs-5">
+            Sent for Manual Review 🚨
+        </p>
+
+        <a href="/view-status" class="btn btn-danger">
+            View Status →
+        </a>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+</body>
+
+</html>

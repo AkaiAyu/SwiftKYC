@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Status</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h2>Application Under Review</h2>
+    <p>Your account is being reviewed by our team.</p>
+    <p>We will notify you once approved.</p>
+
+    <a href="/logout" class="btn btn-secondary">Logout</a>
+
+    {% endblock %}
+
+</body>
+
+</html>

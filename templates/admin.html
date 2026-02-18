@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Admin</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h2>Admin Review Panel</h2>
+
+    <a href="/reset-demo" class="btn btn-warning mb-3">Reset Demo Data</a>
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.status}}</td>
+            <td>
+                <a href="/approve/{{user.id}}" class="btn btn-success">Approve</a>
+                <a href="/reject/{{user.id}}" class="btn btn-danger">Reject</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% endblock %}
+
+</body>
+
+</html>

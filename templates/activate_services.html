@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+{% block title %}Activate Services • SwiftKYC{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="mb-4">Activate Your Banking Services 🚀</h2>
+
+  <form method="POST">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="services" value="Debit Card">
+      <label class="form-check-label">Debit Card 💳</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="services" value="Net Banking">
+      <label class="form-check-label">Net Banking 🌐</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="services" value="UPI">
+      <label class="form-check-label">UPI Payments 📱</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="services" value="SMS Alerts">
+      <label class="form-check-label">SMS Alerts 🔔</label>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="services" value="Email Statements">
+      <label class="form-check-label">Email Statements 📧</label>
+    </div>
+
+    <button class="btn btn-primary mt-4">Activate Selected Services</button>
+  </form>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

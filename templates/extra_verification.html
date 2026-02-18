@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Extra Verification</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h2>Additional Identity Verification</h2>
+    <p>Please confirm your PAN and Date of Birth.</p>
+
+    <form method="post">
+        <input class="form-control mb-3" name="pan" placeholder="Enter PAN" required>
+        <input class="form-control mb-3" name="dob" placeholder="Enter DOB (DD-MM-YYYY)" required>
+
+        <button class="btn btn-success">Verify & Continue</button>
+    </form>
+
+    {% endblock %}
+
+</body>
+
+</html>

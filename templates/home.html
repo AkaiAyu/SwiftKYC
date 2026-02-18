@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftKYC | Powered by AI</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+
+    <h1 class="display-4 mb-3">Welcome to the Future of Banking</h1>
+    <p class="lead mb-4">Open & activate your bank account in minutes using AI-powered onboarding.</p>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" width="150" class="mb-4">
+
+    <div>
+        <a href="/signup" class="btn btn-light btn-lg me-3">Open New Account</a>
+        <a href="/login" class="btn btn-outline-light btn-lg">Login</a>
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>

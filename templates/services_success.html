@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "base.html" %}
+{% block title %}Services Activated{% endblock %}
+{% block content %}
+
+<div class="container mt-5 text-center">
+  <h2>🎉 Services Activated Successfully!</h2>
+
+  <h4 class="mt-4">Activated Services:</h4>
+  <ul class="list-group mt-3">
+    {% for s in services %}
+      <li class="list-group-item">{{ s }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="/dashboard" class="btn btn-success mt-4">Go to Dashboard</a>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
