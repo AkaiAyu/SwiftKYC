@@ -34,6 +34,32 @@ class DigiLockerUser(db.Model):
 with app.app_context():
     db.create_all()
 
+# 🚀 AUTO CREATE TABLES + DEMO DATA (for deployment)
+with app.app_context():
+    db.create_all()
+
+    # If DigiLocker table empty → insert demo users
+    if DigiLockerUser.query.count() == 0:
+        demo_users = [
+            DigiLockerUser(
+                aadhaar="123412341234",
+                mobile="+917028189402",
+                name="Rahul Sharma",
+                dob="12-03-2005",
+                pan="ABCDE1234F"
+            ),
+            DigiLockerUser(
+                aadhaar="999988887777",
+                mobile="+919876543210",
+                name="Priya Singh",
+                dob="05-08-2003",
+                pan="PQRSX5678K"
+            )
+        ]
+
+        db.session.add_all(demo_users)
+        db.session.commit()
+
 # -------- TWILIO CLIENT --------
 twilio_client = Client(
     os.getenv("TWILIO_ACCOUNT_SID"),
