@@ -30,6 +30,10 @@ class DigiLockerUser(db.Model):
     dob = db.Column(db.String(20))
     pan = db.Column(db.String(20))
 
+# 🚀 CREATE DATABASE TABLES AUTOMATICALLY (for deployment)
+with app.app_context():
+    db.create_all()
+
 # -------- TWILIO CLIENT --------
 twilio_client = Client(
     os.getenv("TWILIO_ACCOUNT_SID"),
