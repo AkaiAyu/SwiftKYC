@@ -111,15 +111,26 @@
 
     /* navbar */
     .navbar {
-      background: rgba(255, 255, 255, 0.25) !important;
-      backdrop-filter: blur(10px);
-    }
+  background: rgba(255,255,255,0.65) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
 
     .nav-link {
-      color: white !important;
-      font-weight: 500;
-      margin-right: 15px;
-    }
+  color: #333 !important;
+  font-weight: 600;
+  margin-right: 18px;
+}
+
+.nav-link:hover {
+  color: #ff6aa2 !important;
+}
+
+.navbar-brand {
+  color: #222 !important;
+}
+
 
     .nav-link:hover {
       opacity: 0.8
@@ -141,6 +152,41 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     }
 
+    .btn-light {
+  background: white !important;
+  color: #222 !important;
+  font-weight: 600;
+  border-radius: 40px;
+  padding: 12px 28px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+}
+
+/* LOGIN BUTTON FIX */
+.btn-outline-light {
+  border: 2px solid rgba(0,0,0,0.25);
+  color: #333 !important;
+  background: rgba(255,255,255,0.45) !important;
+  backdrop-filter: blur(10px);
+  font-weight: 600;
+  border-radius: 40px;
+  padding: 12px 28px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background: white !important;
+  color: #ff6aa2 !important;
+  border-color: #ff6aa2 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+
     .form-control {
       border-radius: 20px;
       padding: 15px;
@@ -156,6 +202,69 @@
       padding: 15px;
       font-size: 14px;
     }
+
+    /* ===== GLOBAL TEXT COLORS FIX ===== */
+
+:root {
+  --primary-text: #2d2d2d;
+  --secondary-text: #555;
+  --light-text: #ffffff;
+  --accent: #667eea;
+}
+
+/* default text everywhere */
+body {
+  color: var(--primary-text);
+}
+
+/* headings darker */
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  font-weight: 600;
+}
+
+/* paragraphs */
+p {
+  color: var(--secondary-text);
+}
+
+/* labels & list items */
+label, li {
+  color: var(--primary-text);
+}
+
+/* forms text */
+input, select, textarea {
+  color: #333 !important;
+}
+
+/* placeholder text */
+::placeholder {
+  color: #888 !important;
+}
+
+/* links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* glass card text override */
+.glass-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  animation: fadeIn 1s ease;
+  color: #222;
+}
+
+
   </style>
 </head>
 
@@ -197,8 +306,6 @@
   <!-- FOOTER -->
   <footer>
     🚀 SwiftKYC • Secure • Fast • Intelligent Onboarding
-    <br>
-    Made for Hackathon Demo ❤️
   </footer>
 
   <!-- CHAT BUTTON -->
