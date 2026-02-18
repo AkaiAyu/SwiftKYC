@@ -1,17 +1,14 @@
-# Python
+# Python cache
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.env
 
-# Database
-instance/
-*.db
+# Virtual env (if ever created)
+venv/
+.env/
 
-# VS Code
-.vscode/
+# Database (local only)
+instance/database.db
 
-# OS files
+# OS junk
 .DS_Store
 Thumbs.db
